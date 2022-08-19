@@ -1,0 +1,15 @@
+
+SELECT stock_name , sum(price) as capital_gain_loss
+FROM (
+SELECT stock_name, 
+case 
+
+WHEN operation = 'Buy' THEN -(price)
+ELSE price
+
+END as price
+
+
+FROM Stocks) as tb1
+
+GROUP BY  stock_name 
