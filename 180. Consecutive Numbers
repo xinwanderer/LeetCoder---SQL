@@ -1,0 +1,8 @@
+SELECT distinct(tb3.num) as  ConsecutiveNums  FROM 
+Logs as tb1, Logs AS tb2, Logs AS tb3
+
+WHERE tb1.id  = tb2.id +1 AND tb2.id = tb3.id +1 
+
+AND tb1.num = tb2.num  AND tb2.num= tb3.num
+
+
