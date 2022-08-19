@@ -1,0 +1,11 @@
+SELECT customer_id , count(num_tran) AS count_no_trans  FROM (
+
+
+SELECT customer_id , count(transaction_id)as num_tran FROM Visits
+LEFT JOIN Transactions
+ON 
+Visits.visit_id = Transactions.visit_id
+GROUP BY Visits.visit_id 
+HAVING count(transaction_id) = 0) AS tb1
+
+GROUP BY customer_id
