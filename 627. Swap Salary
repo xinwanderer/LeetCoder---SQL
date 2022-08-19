@@ -1,0 +1,9 @@
+UPDATE Salary 
+
+SET sex = 
+(case  
+WHEN sex = 'f'  THEN 'm'
+WHEN  sex = 'm' THEN 'f'
+END )
+WHERE sex = 'f' OR sex = 'm'
+
