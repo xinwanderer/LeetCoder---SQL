@@ -1,0 +1,5 @@
+SELECT DISTINCT(activity_date) AS day , count(distinct(user_id)) AS active_users  FROM Activity
+
+group by activity_date 
+
+HAVING  activity_date  BETWEEN DATE_ADD('2019-07-27' ,INTERVAL -29 DAY) AND '2019-07-27' 
