@@ -1,0 +1,7 @@
+
+SELECT email FROM (SELECT  email,COUNT(email) AS counts FROM Person  AS tb1
+
+GROUP BY email 
+HAVING counts >1)  AS tb2
+
+
