@@ -1,0 +1,8 @@
+SELECT tb2.name as  Department, tb1.name as  Employee, tb1.salary as Salary
+FROM Employee as tb1
+LEFT JOIN Department as tb2
+ON tb2.id = tb1.departmentId
+
+WHERE (SELECT count(distinct(tb3.salary)) FROM Employee  as tb3
+                   WHERE tb3.departmentId = tb1.departmentId 
+                   and tb3.salary> tb1.salary)<3
